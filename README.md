@@ -11,3 +11,4 @@ https://levelup.gitconnected.com/overnightjs-the-best-way-to-use-expressjs-with-
 https://github.com/seanpmaxwell/overnight
 https://habr.com/ru/post/326986/
 https://graphql.org/graphql-js/
+https://github.com/apollographql/graphql-tools
