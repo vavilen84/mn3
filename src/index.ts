@@ -1,12 +1,21 @@
 import express from "express";
+import dotenv from "dotenv";
+import bodyParser from "body-parser";
+
+// initialize configuration
+dotenv.config();
+
 const app = express();
-const port = 8080; // default port to listen
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-// define a route handler for the default home page
-app.get( "/", ( req, res ) => {
-    res.send( "Hello world!" );
-} );
+const port = process.env.SERVER_PORT;
 
+
+app.post('/images', (req, res) => {
+    // tslint:disable-next-line:no-console
+    console.log( req.body );
+})
 // start the Express server
 app.listen( port, () => {
     // tslint:disable-next-line:no-console
