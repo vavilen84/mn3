@@ -5,6 +5,6 @@ import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/cor
 export class ImagesController {
     @Post()
     private add(req: Request, res: Response): void {
-        res.status(200).json({msg: 'add_called'});
+        res.status(200).json(req.body);
     }
 }
