@@ -12,3 +12,4 @@ https://github.com/seanpmaxwell/overnight
 https://habr.com/ru/post/326986/
 https://graphql.org/graphql-js/
 https://github.com/apollographql/graphql-tools
+https://www.apollographql.com/docs/graphql-tools/
