@@ -1,56 +1,33 @@
-import express from "express";
-
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import { UserController } from './UserController'
-import { Request, Response, NextFunction } from 'express'
-import { Server } from '@overnightjs/core'
-import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/core'
+import {Server} from '@overnightjs/core'
 
-// initialize configuration
-dotenv.config();
+import {ImagesController} from './controllers/ImagesController'
 
-
-
-// const app = express();
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-
-
-
-
-// app.post('/images', (req, res) => {
-//     // tslint:disable-next-line:no-console
-//     console.log( req.body );
-// })
-
-
-
-
-// start the Express server
-// app.listen( port, () => {
-//     // tslint:disable-next-line:no-console
-//     console.log( `server started at http://localhost:${ port }` );
-// } );
-
-
-export class SampleServer extends Server {
+export class App extends Server {
 
     constructor() {
         super();
+        this.initializeBodyParser();
+        this.initializeControllers();
+        this.initializeConfig();
+    }
 
-        this.app.use(bodyParser.json());
-        this.app.use(bodyParser.urlencoded({extended: true}));
+    private initializeConfig() {
+        dotenv.config();
+    }
 
-        // let loginController = new LoginController();
-        const userController = new UserController();
-
+    private initializeControllers() {
+        const userController = new ImagesController();
         super.addControllers([userController]);
     }
 
+    private initializeBodyParser() {
+        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.urlencoded({extended: true}));
+    }
 
     public start(port: string) {
-        // const p = port;
         this.app.listen(port, () => {
             // tslint:disable-next-line:no-console
             console.log('Server listening on port: ' + port);
@@ -58,5 +35,5 @@ export class SampleServer extends Server {
     }
 }
 
-const server = new SampleServer();
-server.start(process.env.SERVER_PORT);
+const app = new App();
+app.start(process.env.SERVER_PORT);
