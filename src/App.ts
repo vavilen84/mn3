@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import {Server} from '@overnightjs/core'
+import "reflect-metadata";
 
 import {ImagesController} from './controllers/ImagesController'
 

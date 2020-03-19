@@ -3,3 +3,5 @@ node_modules
 downloads
 !downloads/.gitignore
 .env
+dist
+!dist/.gitignore

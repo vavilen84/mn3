@@ -13,3 +13,8 @@ https://habr.com/ru/post/326986/
 https://graphql.org/graphql-js/
 https://github.com/apollographql/graphql-tools
 https://www.apollographql.com/docs/graphql-tools/
+https://www.apollographql.com/docs/apollo-server/integrations/middleware/
+https://www.youtube.com/watch?v=qCnQgZzoIMM
+https://typeorm.io/
+https://typeorm.io/#/connection-options/
+https://docs.mongodb.com/manual/reference/mongo-shell/
