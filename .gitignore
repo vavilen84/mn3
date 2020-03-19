@@ -1,4 +1,9 @@
 node_modules
+npm-debug.log
+client/src/compiled/
+server/.env
+
+node_modules
 .idea
 downloads
 !downloads/.gitignore
