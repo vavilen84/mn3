@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+
+  mongoexpress:
+    image: "mongo-express"
+    restart: "always"
+    ports:
+      - "8081:8081"
+    depends_on:
+      - "mongodb"
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=${ME_CONFIG_OPTIONS_EDITORTHEME}
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+    networks:
+      - local
+
+  mongodb:
+    image: "mongo:latest"
+    restart: "always"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - "27017:27017"
+    expose:
+      - "27017"
+    volumes:
+      - "./docker/mongodb:/tmp/mongodb"
+    networks:
+      - local
+
+networks:
+  local:
