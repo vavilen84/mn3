@@ -19,6 +19,7 @@ https://typeorm.io/
 https://typeorm.io/#/connection-options/
 https://docs.mongodb.com/manual/reference/mongo-shell/
 https://github.com/mrcoles/node-react-docker-compose
+https://www.devroom.io/2011/10/24/installing-node-js-and-npm-on-ubuntu-debian/
 
 # Node + Create React App + Docker Compose
 
